@@ -1,0 +1,9 @@
+#! /usr/bin/env ruby
+
+Dir['./lib/*.rb'].each{ |f| require f }
+
+begin
+  OrderConfirmationParser::Service.exec
+rescue => e
+  puts e.message
+end
